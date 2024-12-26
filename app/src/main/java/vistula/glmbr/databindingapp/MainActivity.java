@@ -14,6 +14,7 @@ import vistula.glmbr.databindingapp.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding activityMainBinding;
+    private MyClickHandler myClickHnadler;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -35,5 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         activityMainBinding.setPerson(p1);
 
+        //Binding the handler for click events
+        myClickHnadler = new MyClickHandler(this);
+        activityMainBinding.setClickHandler(myClickHnadler);
     }
 }
